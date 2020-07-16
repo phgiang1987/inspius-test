@@ -1,0 +1,114 @@
+
+.owl-insights .img-item{
+    width: 100%;
+    /* max-height: 202px; */
+    margin-bottom: 20px;
+    text-align: center;
+}
+.owl-insights .img-item img{
+    max-width: 100%;
+    width: auto!important;
+    /* max-height: 100%; */
+}
+.owl-insights .name-item{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+}
+.owl-insights .name-item a{
+    color: inherit;
+}
+/* .owl-insights .owl-nav{
+    position:absolute;
+    top:-83px;
+    right:250px;
+} */
+.owl-insights .owl-nav button:focus{
+    outline: none!important;
+    background: none!important;
+}
+.owl-insights .owl-nav button:hover{
+    background: none!important;
+}
+.owl-insights .excerpt-item{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #333333;
+}
+.owl-insights .date{
+    font-size: 12px;
+    line-height: 20px;
+    /* position: absolute;
+    bottom: 0;
+    left: 0; */
+}
+.grid-insights .col-grid{
+    margin-bottom: 30px;
+}
+/* .grid-insights .item{
+    height: 100%;
+    padding-bottom: 30px;
+    position: relative;
+} */
+.grid-insights .name-item a{
+    height: 75px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.lastest-insights-title .owl-nav{
+    position: relative;
+    top: 5px;
+    margin-right: 64px;
+}
+.lastest-insights-title .owl-nav button{
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+}
+.lastest-insights-title .owl-nav button:hover{
+    background: none;
+}
+.lastest-insights-title .owl-nav button img{
+    max-width: 48px;
+}
+.lastest-insights-title .owl-nav button:focus{
+    outline: none;
+}
+.lastest-insights-title .title-home .title{
+    flex-grow: 1;
+}
+#Latest_Insights_See_All{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 991px){
+    .slider-insights {
+        margin-left: 0;
+    }
+    .slider-insights .owl-stage-outer{
+        transform: translate(0,0)!important;
+    }
+    .lastest-insights-title .owl-nav{
+        display: none;
+    }
+    .owl-insights .owl-nav{
+        text-align: center;
+    }
+    .owl-insights .owl-nav.disabled{
+        display: block!important;
+    }
+    .grid-insights .name-item a{
+        height: auto;
+    }
+    /* .owl-insights .img-item{
+        max-height: initial;
+    } */
+}
