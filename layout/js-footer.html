@@ -1,0 +1,168 @@
+
+<style type="text/css">
+  @media screen and (max-width: 640px) {
+
+    #wpfront-scroll-top-container {
+      visibility: hidden;
+    }
+
+  }
+</style>
+
+<style type="text/css">
+  @media screen and (max-device-width: 640px) {
+
+    #wpfront-scroll-top-container {
+      visibility: hidden;
+    }
+
+  }
+</style>
+
+<div id="wpfront-scroll-top-container">
+  <img alt="" data-src="./images/icons/114.png" class="lazyload"
+    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img
+      src="./images/icons/114.png" alt="" /></noscript>
+</div>
+<script type="text/javascript">
+  function wpfront_scroll_top_init() {
+    if (typeof wpfront_scroll_top == "function" && typeof jQuery !== "undefined") {
+      wpfront_scroll_top({
+        "scroll_offset": 100,
+        "button_width": 0,
+        "button_height": 0,
+        "button_opacity": 0.5,
+        "button_fade_duration": 200,
+        "scroll_duration": 400,
+        "location": 1,
+        "marginX": 10,
+        "marginY": 10,
+        "hide_iframe": false,
+        "auto_hide": "on",
+        "auto_hide_after": 2,
+        "button_action": "top",
+        "button_action_element_selector": "",
+        "button_action_container_selector": "html, body",
+        "button_action_element_offset": 0
+      });
+    } else {
+      setTimeout(wpfront_scroll_top_init, 100);
+    }
+  }
+  wpfront_scroll_top_init();
+</script>
+<script type="text/javascript">
+  function atomicBlocksShare(url, title, w, h) {
+    var left = (window.innerWidth / 2) - (w / 2);
+    var top = (window.innerHeight / 2) - (h / 2);
+    return window.open(url, title,
+      'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top=' +
+      top + ', left=' + left);
+  }
+</script>
+<script type="text/javascript">
+  var recaptchaWidgets = [];
+  var recaptchaCallback = function () {
+    var forms = document.getElementsByTagName('form');
+    var pattern = /(^|\s)g-recaptcha(\s|$)/;
+
+    for (var i = 0; i < forms.length; i++) {
+      var divs = forms[i].getElementsByTagName('div');
+
+      for (var j = 0; j < divs.length; j++) {
+        var sitekey = divs[j].getAttribute('data-sitekey');
+
+        if (divs[j].className && divs[j].className.match(pattern) && sitekey) {
+          var params = {
+            'sitekey': sitekey,
+            'type': divs[j].getAttribute('data-type'),
+            'size': divs[j].getAttribute('data-size'),
+            'theme': divs[j].getAttribute('data-theme'),
+            'badge': divs[j].getAttribute('data-badge'),
+            'tabindex': divs[j].getAttribute('data-tabindex')
+          };
+
+          var callback = divs[j].getAttribute('data-callback');
+
+          if (callback && 'function' == typeof window[callback]) {
+            params['callback'] = window[callback];
+          }
+
+          var expired_callback = divs[j].getAttribute('data-expired-callback');
+
+          if (expired_callback && 'function' == typeof window[expired_callback]) {
+            params['expired-callback'] = window[expired_callback];
+          }
+
+          var widget_id = grecaptcha.render(divs[j], params);
+          recaptchaWidgets.push(widget_id);
+          break;
+        }
+      }
+    }
+  };
+
+  document.addEventListener('wpcf7submit', function (event) {
+    switch (event.detail.status) {
+      case 'spam':
+      case 'mail_sent':
+      case 'mail_failed':
+        for (var i = 0; i < recaptchaWidgets.length; i++) {
+          grecaptcha.reset(recaptchaWidgets[i]);
+        }
+    }
+  }, false);
+</script>
+
+<script>
+  document.addEventListener('wpcf7mailsent', function (event) {
+    location = 'http://localhost/inspius/thank-you';
+  }, false);
+</script>
+
+<script type='text/javascript' src='./js/core.min.js'></script>
+<script type='text/javascript' src='./js/datepicker.min.js'></script>
+<script type='text/javascript'>
+  jQuery(document).ready(function (jQuery) {
+    jQuery.datepicker.setDefaults({
+      "closeText": "Close",
+      "currentText": "Today",
+      "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+        "October", "November", "December"
+      ],
+      "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+      "nextText": "Next",
+      "prevText": "Previous",
+      "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+      "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"],
+      "dateFormat": "MM d, yy",
+      "firstDay": 1,
+      "isRTL": false
+    });
+  });
+</script>
+<script type='text/javascript'>
+  /* <![CDATA[ */
+  var wpcf7 = {
+    "apiSettings": {
+      "root": "http:\/\/localhost\/inspius\/wp-json\/contact-form-7\/v1",
+      "namespace": "contact-form-7\/v1"
+    },
+    "recaptcha": {
+      "messages": {
+        "empty": "Please verify that you are not a robot."
+      }
+    }
+  };
+  /* ]]> */
+</script>
+<script type='text/javascript' src='./js/contact-form-7.js'></script>
+<script type='text/javascript' src='./js/ucf7_scripts.js'></script>
+<script type="text/javascript" src="./js/wpfront-scroll-top.min.js" async="async" defer="defer"></script>
+<script type='text/javascript' src='./js/atomic-blocks-dismiss.js'></script>
+<script type='text/javascript' src='./js/smush-lazy-load.min.js'></script>
+<script type='text/javascript' src='./js/wp-embed.min.js'></script>
+<script type='text/javascript'
+  src='https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&#038;render=explicit&#038;ver=2.0'></script>
+<script type='text/javascript' src='./js/bootstrap.bundle.min.js'></script>

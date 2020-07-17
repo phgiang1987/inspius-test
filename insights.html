@@ -241,6 +241,8 @@
   <script>
     $(document).ready(function() {
       $('#header-outline').load("layout/menu.html");
+      $('#footer-outline').load("layout/footer.html");
+      $('#js-footer').load("layout/js-footer.html");
     });
   </script>
 </head>
@@ -465,7 +467,7 @@
             </div>
           </div>
 
-          <link rel='stylesheet' href='http://localhost/inspius/wp-content/themes/inspius/assets/css/owl.css'>
+          <link rel='stylesheet' href='./css/owl.css'>
           <style>
             .insight-page-outline {
               padding-bottom: 100px;
@@ -616,149 +618,11 @@
       </main><!-- .site-main -->
     </div><!-- .content-area -->
 
-
-    <footer id="is-footer-copyright-group">
-      <div id="footer-top" class="footer">
-        <div class="container-fluid text-center">
-          <div class="logo-footer">
-            <a class="navbar-brand logo" href="http://localhost/inspius/">
-              <img alt="Hire Vietnamese Software Engineers and Developers for Singapore Companies"
-                data-src="http://localhost/inspius/wp-content/themes/inspius/assets/images/logo-while.png"
-                class="main-logo img-responsive lazyload"
-                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
-                  alt="Hire Vietnamese Software Engineers and Developers for Singapore Companies"
-                  data-src="http://localhost/inspius/wp-content/themes/inspius/assets/images/logo-while.png"
-                  class="main-logo img-responsive lazyload"
-                  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img
-                    class="main-logo img-responsive"
-                    src="http://localhost/inspius/wp-content/themes/inspius/assets/images/logo-while.png"
-                    alt="Hire Vietnamese Software Engineers and Developers for Singapore Companies"></noscript></noscript>
-            </a> </div>
-          <div id="copyright" class="footer-bottom" style="color: #fff;">©2020 Copyright by Inspius</div>
-        </div>
-      </div>
-    </footer>
-
-    
+    <div id="footer-outline"></div>
   </div>
 
-
-  <style type="text/css">
-    @media screen and (max-width: 640px) {
-
-      #wpfront-scroll-top-container {
-        visibility: hidden;
-      }
-
-    }
-  </style>
-
-  <style type="text/css">
-    @media screen and (max-device-width: 640px) {
-
-      #wpfront-scroll-top-container {
-        visibility: hidden;
-      }
-
-    }
-  </style>
-
-  <div id="wpfront-scroll-top-container">
-    <img alt="" data-src="./images/icons/114.png" class="lazyload"
-      src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img
-        src="./images/icons/114.png" alt="" /></noscript>
-  </div>
-  <script type="text/javascript">
-    function wpfront_scroll_top_init() {
-      if (typeof wpfront_scroll_top == "function" && typeof jQuery !== "undefined") {
-        wpfront_scroll_top({
-          "scroll_offset": 100,
-          "button_width": 0,
-          "button_height": 0,
-          "button_opacity": 0.5,
-          "button_fade_duration": 200,
-          "scroll_duration": 400,
-          "location": 1,
-          "marginX": 10,
-          "marginY": 10,
-          "hide_iframe": false,
-          "auto_hide": "on",
-          "auto_hide_after": 2,
-          "button_action": "top",
-          "button_action_element_selector": "",
-          "button_action_container_selector": "html, body",
-          "button_action_element_offset": 0
-        });
-      } else {
-        setTimeout(wpfront_scroll_top_init, 100);
-      }
-    }
-    wpfront_scroll_top_init();
-  </script>
-  <script type="text/javascript">
-    function atomicBlocksShare(url, title, w, h) {
-      var left = (window.innerWidth / 2) - (w / 2);
-      var top = (window.innerHeight / 2) - (h / 2);
-      return window.open(url, title,
-        'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=600, height=600, top=' +
-        top + ', left=' + left);
-    }
-  </script>
-
-  <script>
-    document.addEventListener('wpcf7mailsent', function (event) {
-      location = 'http://localhost/inspius/thank-you';
-    }, false);
-  </script>
-
-  <script type='text/javascript' src='./js/core.min.js'></script>
-  <script type='text/javascript' src='./js/datepicker.min.js'></script>
-  </script>
-  <script type='text/javascript'>
-    jQuery(document).ready(function (jQuery) {
-      jQuery.datepicker.setDefaults({
-        "closeText": "Close",
-        "currentText": "Today",
-        "monthNames": ["January", "February", "March", "April", "May", "June", "July", "August", "September",
-          "October", "November", "December"
-        ],
-        "monthNamesShort": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        "nextText": "Next",
-        "prevText": "Previous",
-        "dayNames": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "dayNamesShort": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-        "dayNamesMin": ["S", "M", "T", "W", "T", "F", "S"],
-        "dateFormat": "MM d, yy",
-        "firstDay": 1,
-        "isRTL": false
-      });
-    });
-  </script>
-  <script type='text/javascript'>
-    /* <![CDATA[ */
-    var wpcf7 = {
-      "apiSettings": {
-        "root": "http:\/\/localhost\/inspius\/wp-json\/contact-form-7\/v1",
-        "namespace": "contact-form-7\/v1"
-      },
-      "recaptcha": {
-        "messages": {
-          "empty": "Please verify that you are not a robot."
-        }
-      }
-    };
-    /* ]]> */
-  </script>
-  <script type='text/javascript' src='./js/contact-form-7.js'></script>
-  <script type='text/javascript' src='./js/ucf7_scripts.js'></script>
-  <script type="text/javascript" src="./js/wpfront-scroll-top.min.js" async="async" defer="defer"></script>
-  <script type='text/javascript' src='./js/atomic-blocks-dismiss.js'></script>
-  <script type='text/javascript' src='./js/smush-lazy-load.min.js'></script>
-  <script type='text/javascript' src='./js/wp-embed.min.js'></script>
-  <script type='text/javascript'
-    src='https://www.google.com/recaptcha/api.js?onload=recaptchaCallback&#038;render=explicit&#038;ver=2.0'></script>
-  <script type='text/javascript' src='./js/bootstrap.bundle.min.js?ver=5.4.1'></script>
-
+  <div id="js-footer"></div>
+  
 </body>
 
 </html>
