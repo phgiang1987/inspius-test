@@ -826,7 +826,7 @@
                             We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
                         </style>
                         <div id="mc_embed_signup">
-                          <form action="https://inspius.us17.list-manage.com/subscribe/post?u=f7c4dc0e2ce29518a1dc1e965&amp;id=9e338cb766"
+                          <form 
                             method="get" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
                             novalidate>
                             <div id="mc_embed_signup_scroll">
@@ -936,35 +936,32 @@
 
   <div id="js-footer"></div>
   <script type="text/javascript">
-
-
+    $(document).ready(function () {
       $("#mc-embedded-subscribe-form").submit(function(e){
-          e.preventDefault();
-          console.log(2222);
-          console.log($("#mc-embedded-subscribe-form").serialize());
-          var form_mailchimp = $("#mc-embedded-subscribe-form");
-			    $.ajax({
-              type: "GET",
-              url: form_mailchimp.attr("action"),
-              data: form_mailchimp.serialize(),
-              cache: false,
-              dataType: "jsonp",
-              jsonp: "c",
-              contentType: "application/json; charset=utf-8",
-
-              error: function(error){},
-
-              success: function(data){
-                console.log(data);
-                  if (data.result != "success") {
-                      console.log(4544444444444);
-
-                  } else {
-                    console.log(888888888888888);
-                  }
-              }
-          });
-			});
+        console.log(2222);
+        e.preventDefault();
+        var form_mailchimp = $("#mc-embedded-subscribe-form");
+        $.ajax({
+          // type: "GET",
+          // url: form_mailchimp.attr("action"),
+          // data: form_mailchimp.serialize(),
+          // dataType    : 'json',
+          // contentType: "application/json; charset=utf-8",
+          url: 'https://inspius.us17.list-manage.com/subscribe/post?u=f7c4dc0e2ce29518a1dc1e965&amp;id=9e338cb766',
+          data: form_mailchimp.serialize(),
+          type: 'GET',
+          dataType:'JSON',
+          success: function(data){
+            console.log(data);
+            if (data.result != "success") {
+              console.log(4544444444444);
+            } else {
+              console.log(888888888888888);
+            }
+          }
+        })
+      });
+    });
   </script>
 
   <style>
